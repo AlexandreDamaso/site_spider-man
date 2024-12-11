@@ -15,6 +15,7 @@ body::before {
    height: 100%;
    position: absolute;
    opacity: 0.2;
+   transition: background-image 1s ease-in-out, opacity 1s ease-in-out;
    /* z-index: -1; */
 }
 
@@ -24,10 +25,6 @@ body::before {
    text-align: center;
    position: relative;
 }
-
-/* .sm-menu__items {
-   display: flex;   
-} */
 
 .sm-menu__item {
    display: inline-block;
@@ -53,6 +50,7 @@ body::before {
    width: calc(100% / 3 - 8%);
    height: 70vh;
    position: relative;
+   transition: filter 0.5s ease-in-out;
 }
 
 .sm-card__background {
@@ -61,6 +59,7 @@ body::before {
    object-fit: cover;
    position: absolute;
    opacity: 1;
+   transition: opacity 0.5s ease-in-out;
 }
  
 .sm-card__image {
@@ -68,6 +67,7 @@ body::before {
    height: 100%;
    object-fit: contain;
    position: relative;
+   transition: 1s ease-in-out;
 }
 
 .sm-card__title {
@@ -77,6 +77,7 @@ body::before {
    position: absolute;
    width: 100%;
    bottom: 0;
+   transition: bottom 1s ease-in-out;
 }
 
 .sm-controller {
@@ -101,11 +102,11 @@ body::before {
    font-weight: bold;
    cursor: pointer;
    z-index: 1;
-   transition: 0.5s ease-in-out;
+   transition: transform 0.3s ease-in-out;
 }
 
 .sm-controller__button:hover {
-   transform: scale(1.2);
+   transform: scale(1.1);
 }
 
 .sm-controller__button:nth-child(2) {
@@ -117,4 +118,40 @@ body::before {
    width: 50%;
    height: 2px;
    position: absolute;
+}
+
+/* Hover Animation  */
+
+.sm-card--hovered .sm-card__background {
+   cursor: pointer;
+   opacity: 0;
+}
+ 
+.sm-card--hovered .sm-card__image {
+   transform: scale(1.4);
+   filter: drop-shadow(30px 10px 4px rgba(0, 0, 0, 0.5));
+}
+
+body#spider-man-01-hovered::before {
+   background-image: url('../image/pic-sm-bg-01.jpg');
+}
+ 
+body#spider-man-02-hovered::before {
+   background-image: url('../image/pic-sm-bg-02.jpg');
+}
+ 
+body#spider-man-03-hovered::before {
+   background-image: url('../image/pic-sm-bg-03.jpg');
+}
+
+body[id^="spider-man-"]::before {
+   opacity: 1;
+}
+
+body[id^="spider-man-"] .sm-card:not(.sm-card--hovered) {
+   filter: grayscale(100%);
+}
+
+.sm-card--hovered .sm-card__title {
+   bottom: 50%;
 }
