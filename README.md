@@ -1,2 +1,2 @@
 # site_spider-man
-Página do universo do Spider-man
+Site do universo do Spider-man
