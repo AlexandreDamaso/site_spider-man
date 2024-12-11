@@ -5,21 +5,19 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Spider-Man | Aranha-Verso</title>
-   <link rel="stylesheet" href="./src/css/reset.css">
-   <link rel="stylesheet" href="./src/css/global.css">
    <link rel="stylesheet" href="./src/css/main.css">
 </head>
 
 <body>
    <nav class="sm-menu">
-      <ul>
+      <ul class="sm-menu__items">
          <li class="sm-menu__item">
             <a href="#">Página Inicial</a>
          </li>
          <li class="sm-menu__item">
             <a href="#">Tobey Maguire</a>
          </li>
-         <li class="sm-menu__icon">
+         <li class="sm-menu__item sm-menu__icon">
             <img src="./src/image/icon/spider.svg" alt="Icone do Spider-Man">
          </li>
          <li class="sm-menu__item">
@@ -30,7 +28,36 @@
          </li>
       </ul>
    </nav>
-   <div class="sm-container"></div>
+   <div class="sm-container">
+      <a class="sm-card" href="#">
+         <img class="sm-card__background" src="./src/image/pic-sm-bg-01.jpg" alt="">
+         <img class="sm-card__image" src="./src/image/spider-man-01.png" alt="Tobey Maguire">
+         <h2 class="sm-card__title">Tobey Maguire</h2>
+      </a>
+      <a class="sm-card" href="#">
+         <img class="sm-card__background" src="./src/image/pic-sm-bg-03.jpg" alt="">
+         <img class="sm-card__image" src="./src/image/spider-man-03.png" alt="Andrew Garfield">
+         <h2 class="sm-card__title">Andrew Garfield</h2>
+      </a>
+      <a class="sm-card" href="#">
+         <img class="sm-card__background" src="./src/image/pic-sm-bg-02.jpg" alt="">
+         <img class="sm-card__image" src="./src/image/spider-man-02.png" alt="Tom Holland">
+         <h2 class="sm-card__title">Tom Holland</h2>
+      </a>
+   </div>
+   <div class="sm-controller">
+      <div id="bt1" onclick="selectCarouselItem(this)" class="sm-controller__button s-controller__button--active">
+        01
+      </div>
+      <div id="bt2" onclick="selectCarouselItem(this)" class="sm-controller__button">
+        02
+      </div>
+      <div id="bt3" onclick="selectCarouselItem(this)" class="sm-controller__button">
+        03
+      </div>
+      <div class="sm-controller__line"></div>
+    </div>
+
 </body>
 
 </html>
